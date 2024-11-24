@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostik Bestellen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Dianostika bestellen</h1>
+    <form id="diagnostics-form">
+      <!-- Поле для имени -->
+      <label for="name">Ihr Name:</label>
+      <input type="text" id="name" name="name" placeholder="Volodimir" required>
+
+      <!-- Поле для ввода телефона -->
+      <label for="phone">Ihre Telefonnummer:</label>
+      <div class="phone-container">
+        <div class="phone-code-container">
+          <select id="phone-code" name="phone-code" required>
+            <option value="+43" selected>+43 (Österreich)</option>
+            <option value="+49">+49 (Deutschland)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+33">+33 (Frankreich)</option>
+            <option value="+1">+1 (USA/Kanada)</option>
+          </select>
+        </div>
+        <div class="phone-number-container">
+          <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required maxlength="15">
+          <span id="phone-error" class="error-message"></span>
+        </div>
+      </div>
+
+      <!-- Поле для выбора марки и модели машины -->
+      <label for="car-brand">Geben Sie die Marke und das Modell der Maschine an:</label>
+      <div class="car-container">
+        <select id="car-brand" name="car-brand" required>
+          <option value="">Wählen Sie eine Marke</option>
+          <option value="Mazda">Mazda</option>
+          <option value="BMW">BMW</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="Audi">Audi</option>
+        </select>
+        <select id="car-model" name="car-model" required>
+          <option value="">Wählen Sie ein Modell</option>
+        </select>
+        <span id="car-error" class="error-message"></span> <!-- Ошибка выбора модели -->
+      </div>
+
+      <!-- Поле для выбора типа диагностики -->
+      <label for="diagnostics">Schreiben Sie auf, was nicht funktioniert oder Ihnen Sorgen bereitet:</label>
+      <select id="diagnostics" name="diagnostics" required>
+        <option value="">Wählen Sie einen Diagnosepunkt</option>
+        <option value="Motorgeräusche">Motorgeräusche</option>
+        <option value="Bremsprobleme">Bremsprobleme</option>
+        <option value="Elektronik">Elektronik</option>
+        <option value="Klimaanlage">Klimaanlage</option>
+        <option value="Aufhängung">Aufhängung</option>
+        <option value="Reifenprobleme">Reifenprobleme</option>
+        <option value="Ölleckage">Ölleckage</option>
+        <option value="Kraftstoffverbrauch">Kraftstoffverbrauch</option>
+        <option value="Getriebe">Getriebe</option>
+        <option value="Batterie">Batterie</option>
+        <option value="Abgasanlage">Abgasanlage</option>
+        <option value="Sonstiges">Sonstiges</option>
+      </select>
+
+      <!-- Чекбокс для согласия -->
+      <div class="checkbox-container">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <label for="privacy">Ich akzeptiere die Datenschutzbestimmungen</label>
+        <span id="privacy-error" class="error-message"></span>
+      </div>
+
+      <!-- Кнопка отправки -->
+      <button type="submit">Bestellung</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
